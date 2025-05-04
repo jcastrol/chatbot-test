@@ -1,0 +1,66 @@
+[
+  {
+    "userId": "1",
+    "chats": [
+      {
+        "id": "chat1",
+        "title": "Create Chatbot GPT with Python",
+        "messages": [
+          {
+            "id": "m1",
+            "sender": "user",
+            "content": "How do I create a chatbot using GPT in Python?",
+            "timestamp": "2025-05-04T15:00:00Z"
+          },
+          {
+            "id": "m2",
+            "sender": "bot",
+            "content": "You can use the Hugging Face Transformers library...",
+            "timestamp": "2025-05-04T15:00:02Z"
+          }
+        ]
+      },
+      {
+        "id": "chat2",
+        "title": "What is UX Audit?",
+        "messages": [
+          {
+            "id": "m1",
+            "sender": "user",
+            "content": "What is a UX audit and why is it useful?",
+            "timestamp": "2025-05-03T12:15:00Z"
+          },
+          {
+            "id": "m2",
+            "sender": "bot",
+            "content": "A UX audit helps identify usability problems in a product...",
+            "timestamp": "2025-05-03T12:15:03Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userId": "2",
+    "chats": [
+      {
+        "id": "chat1",
+        "title": "How Chat GPT Work?",
+        "messages": [
+          {
+            "id": "m1",
+            "sender": "user",
+            "content": "Explain how ChatGPT works.",
+            "timestamp": "2025-05-04T10:00:00Z"
+          },
+          {
+            "id": "m2",
+            "sender": "bot",
+            "content": "ChatGPT is based on the transformer architecture...",
+            "timestamp": "2025-05-04T10:00:02Z"
+          }
+        ]
+      }
+    ]
+  }
+]
