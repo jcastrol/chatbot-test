@@ -15,7 +15,7 @@
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/usuario/proyecto-chat-openai.git
+git clone https://github.com/jcastrol/chatbot-test.git
 cd proyecto-chat-openai
 ```
 
