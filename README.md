@@ -54,8 +54,9 @@ La aplicación estará disponible en `http://localhost:3000`
 - Implementación segura usando **Server Actions**.
 - Adaptador de `BotService` que encapsula la lógica de OpenAI.
   
-**Nota:**
+Nota:
 si va a usar el api de open_ai debe descomentar el adaptador en los ViewModels de chat y comentar la instanciación del repository LocalBotService por motivos de tiempo no realice un feature flag para poder cambiar facilmente entre instansaciones 
+
 ---
 
 ## ✨ Posibles mejoras
