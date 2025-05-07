@@ -1,21 +1,12 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useChatListViewModel } from "@/features/chat/presentation/viewModels/useChatListViewModel";
 import { useChatViewModel } from "@/features/chat/presentation/viewModels/useChatViewModel";
-
-import { ChatSidebarView } from "@/features/chat/presentation/views/ChatSidebarView";
-import { ChatMessagesView } from "@/features/chat/presentation/views/ChatMessagesView";
-import { ChatInputView } from "@/features/chat/presentation/views/ChatInputView";
+import { useUserProfileViewModel } from "@/features/user/presentation/viewMoldels/useUserProfileViewModel";
+import { ChatPageView } from "@/features/chat/presentation/views/ChatPageView";
 
 export default function ChatPage() {
   const { chatId } = useParams<{ chatId: string }>();
-  const {
-    chats,
-    loading: loadingList,
-    handleNewChat,
-    handleSelectChat,
-  } = useChatListViewModel();
 
   const {
     chat,
@@ -25,27 +16,17 @@ export default function ChatPage() {
     send,
   } = useChatViewModel(chatId);
 
-  if (loadingList || loadingChat) {
-    return <div className="p-6">Loading...</div>;
-  }
+  const { user, loading: loadingUser } = useUserProfileViewModel();
 
   return (
-    <>
-      {chat ? (
-        <>
-          <div className="flex items-center px-6 py-4 border-b text-sm font-semibold text-gray-700">
-            {chat.title}
-          </div>
-
-          <ChatMessagesView messages={chat.messages} />
-
-          <ChatInputView value={input} onChange={setInput} onSend={send} />
-        </>
-      ) : (
-        <div className="flex-1 flex items-center justify-center text-gray-500">
-          No chat found.
-        </div>
-      )}
-    </>
+    <ChatPageView
+      chat={chat}
+      user={user}
+      loadingUser={loadingUser}
+      loadingChat={loadingChat}
+      input={input}
+      setInput={setInput}
+      send={send}
+    />
   );
 }

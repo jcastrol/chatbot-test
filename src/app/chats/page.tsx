@@ -1,7 +1,7 @@
 'use client'
 
-import { EmptyChatView } from '@/features/chat/presentation/views/EmptyChatView'
-import { ChatInputView } from '@/features/chat/presentation/views/ChatInputView'
+import { WelcomeChat } from '@/features/chat/presentation/components/molecules/WelcomeChat'
+import { ChatInput } from '@/features/chat/presentation/components/molecules/ChatInput'
 import { useStartChatViewModel } from '@/features/chat/presentation/viewModels/useStartChatViewModel'
 
 
@@ -12,8 +12,8 @@ export default function ChatsPage() {
 
   return (
     <>
-      <EmptyChatView />
-      <ChatInputView value={input} onChange={setInput} onSend={send} />
+      <WelcomeChat />
+      <ChatInput  value={input} onChange={setInput} onSend={send} />
     </>
   )
 }

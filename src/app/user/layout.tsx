@@ -1,6 +1,7 @@
 'use client'
 import { useChatListViewModel } from "@/features/chat/presentation/viewModels/useChatListViewModel";
 import { ChatSidebarView } from "@/features/chat/presentation/views/ChatSidebarView";
+import { useUserProfileViewModel } from "@/features/user/presentation/viewMoldels/useUserProfileViewModel";
 import { useParams } from "next/navigation";
 
 export default function ChatsLayout({
@@ -15,6 +16,7 @@ export default function ChatsLayout({
     handleNewChat,
     handleSelectChat,
   } = useChatListViewModel();
+  const {user,loading}=useUserProfileViewModel()
   return (
    
           <div className="flex h-screen">
@@ -24,6 +26,11 @@ export default function ChatsLayout({
               onNewChat={handleNewChat}
               onSelect={handleSelectChat}
               selectedChatId={chatId}
+              loading={loadingList || loading}
+              user={{
+                avatarUrl: user?.avatarUrl ?? null,
+                fullName: user?.fullName ?? "",
+              }}
             />
 
             {/* Chat area */}
